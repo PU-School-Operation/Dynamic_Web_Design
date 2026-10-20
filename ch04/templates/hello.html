@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Hello {{ name }}{% endblock %}
+
+{% block content %}
+<p class="greeting">哈囉，{{ name }}！</p>
+<!-- 從 static 資料夾讀取 image.png 檔案 -->
+<img src="{{ url_for('static', filename='image.png') }}" alt="圖片" width="150">
+
+<hr>
+<!-- 標籤：if 條件判斷 -->
+<h3>成績判斷（分數：{{ score }}）</h3>
+{% if score >= 90 %}
+<p>等第：A（太強了！）</p>
+{% elif score >= 60 %}
+<p>等第：B（及格，繼續加油）</p>
+{% else %}
+<p>等第：C（需要補強）</p>
+{% endif %}
+
+<hr>
+<!-- 標籤：for 迴圈 -->
+<h3>for 迴圈（列出功能清單）</h3>
+<ol>
+    {% for it in items %}
+    <li>{{ loop.index }}. {{ it }}</li>
+    {% endfor %}
+</ol>
+<hr>
+{% endblock %}

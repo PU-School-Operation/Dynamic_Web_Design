@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Flask模板網站{% endblock %}</title>
+    <!-- 從 static 資料夾讀取 style.css 檔案 -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>Flask模板網站</h1>
+        <hr>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+
+</html>

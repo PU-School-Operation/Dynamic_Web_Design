@@ -1,0 +1,9 @@
+header h1 {
+    color: orange;
+}
+
+.greeting {
+    color: red;
+    font-size: 24px;
+    font-weight: bold;
+}
